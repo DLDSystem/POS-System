@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="POS_System.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource launcher_background}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Image Margin="90,70,90,30" Source="McDonaldsLogoPrimary.png" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="End">
+                <Label
+                    Padding="0,0,0,50"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Log into your account"
+                    TextColor="Black" />
+                <Entry
+                    x:Name="txtEmail"
+                    Margin="-20,0,-20,10"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Email"
+                    Placeholder="Email"
+                    ReturnType="Next"
+                    TextChanged="txtEmail_TextChanged" />
+                <Entry
+                    x:Name="txtPassword"
+                    Margin="-20,5,-20,10"
+                    ClearButtonVisibility="WhileEditing"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    ReturnType="Next"
+                    TextChanged="txtPassword_TextChanged" />
+                <Label
+                    Padding="0,0,-15,0"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    Text="Forgot Password?"
+                    TextColor="Black" />
+
+                <Button
+                    x:Name="btnLogin"
+                    Margin="-20,35,-20,10"
+                    BackgroundColor="{StaticResource Primary}"
+                    BorderColor="{StaticResource Primary}"
+                    BorderWidth="1"
+                    Clicked="btnLogin_Clicked"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    IsEnabled="False"
+                    Text="Login"
+                    TextColor="{StaticResource launcher_background}"
+                    TextTransform="None">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource UncheckedColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+                <Label
+                    Padding="0,15,0,10"
+                    FontSize="15"
+                    HorizontalOptions="Center"
+                    Text="Don't have an account?"
+                    TextColor="Black" />
+                <Button
+                    x:Name="btnSignup"
+                    Margin="-20,0,-20,10"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    BorderColor="{StaticResource Primary}"
+                    BorderWidth="1"
+                    Clicked="btnSignup_Clicked"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Text="Signup"
+                    TextColor="{StaticResource Primary}"
+                    TextTransform="None" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

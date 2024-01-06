@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="POS_System.Views.SignupPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Image Margin="100,70,100,30" Source="McDonaldsLogoPrimary.png" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="End">
+                <Label
+                    Padding="0,0,0,40"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Create your account"
+                    TextColor="Black" />
+                <Entry
+                    x:Name="txtFullname"
+                    Margin="-20,0,-20,10"
+                    ClearButtonVisibility="WhileEditing"
+                    Placeholder="Fullname"
+                    ReturnType="Next" />
+                <Entry
+                    x:Name="txtEmail"
+                    Margin="-20,0,-20,10"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Email"
+                    Placeholder="Email"
+                    ReturnType="Next" />
+                <Entry
+                    x:Name="txtPassword"
+                    Margin="-20,5,-20,10"
+                    ClearButtonVisibility="WhileEditing"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    ReturnType="Next" />
+
+                <StackLayout>
+                    <StackLayout
+                        Margin="-25,0,-20,0"
+                        HorizontalOptions="Start"
+                        Orientation="Horizontal">
+                        <CheckBox x:Name="chbTermsCond" Color="{StaticResource Primary}" />
+                        <Label
+                            Padding="0,0,0,0"
+                            FontSize="12"
+                            Text="I agree to the Terms &amp; Conditions and Privacy Policy"
+                            TextColor="Black"
+                            TextType="Html"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Button
+                    x:Name="btnSignup"
+                    Margin="-20,35,-20,10"
+                    BackgroundColor="{StaticResource Primary}"
+                    BorderColor="{StaticResource Primary}"
+                    BorderWidth="1"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Text="Signup"
+                    TextColor="{StaticResource launcher_background}"
+                    TextTransform="None">
+                    <Button.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference chbTermsCond}, Path=IsChecked}"
+                            TargetType="Button"
+                            Value="True">
+                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference chbTermsCond}, Path=IsChecked}"
+                            TargetType="Button"
+                            Value="False">
+                            <Setter Property="BackgroundColor" Value="{StaticResource UncheckedColor}" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+                <Label
+                    Padding="0,15,0,10"
+                    FontSize="15"
+                    HorizontalOptions="Center"
+                    Text="Already have an account?"
+                    TextColor="Black" />
+                <Button
+                    x:Name="btnLogin"
+                    Margin="-20,0,-20,10"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    BorderColor="{StaticResource Primary}"
+                    BorderWidth="1"
+                    Clicked="btnLogin_Clicked"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Text="Login"
+                    TextColor="{StaticResource Primary}"
+                    TextTransform="None" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

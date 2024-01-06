@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="POS_System.Views.TabbedContainer"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:POS_System.Views.Administrator"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    BarBackgroundColor="{StaticResource launcher_background}"
+    NavigationPage.HasNavigationBar="False">
+
+    <local:HomePage Title="Home" IconImageSource="Home.png" />
+    <local:ProductsPage Title="Products" IconImageSource="products.png" />
+    <local:SalesPage Title="Sales" IconImageSource="sales.png" />
+    <local:ProfilePage Title="Profile" IconImageSource="user.png" />
+</TabbedPage>

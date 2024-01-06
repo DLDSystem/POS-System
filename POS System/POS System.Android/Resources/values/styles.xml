@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="MainTheme" parent="MainTheme.Base">
+  </style>
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+
+	  <item name="windowNoTitle">true</item>
+	  <item name="windowActionBar">false</item>
+	  <!-- Set theme colors from https://aka.ms/material-colors -->
+	  <!-- colorPrimary is used for the default action bar background -->
+	  <item name="colorPrimary">#DE1100</item>
+	  <!-- colorPrimaryDark is used for the status bar -->
+	  <item name="colorPrimaryDark">#DE1100</item>
+	  <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+	  <item name="colorAccent">#DE1100</item>
+  </style>
+	
+</resources>

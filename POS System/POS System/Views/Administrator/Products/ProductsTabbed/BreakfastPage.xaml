@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="POS_System.Views.Administrator.BreakfastPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:POS_System.Models.Products">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView VerticalOptions="FillAndExpand">
+                <CollectionView x:Name="BreakfastPageView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10,-5">
+                                <FlexLayout
+                                    Margin="0"
+                                    Padding="0,0,0,0"
+                                    AlignContent="Start"
+                                    AlignItems="Start"
+                                    FlowDirection="LeftToRight"
+                                    HorizontalOptions="StartAndExpand"
+                                    JustifyContent="Center"
+                                    VerticalOptions="CenterAndExpand"
+                                    Wrap="Wrap">
+                                    <Frame
+                                        Margin="0,10,10,20"
+                                        Padding="0"
+                                        BackgroundColor="{StaticResource UncheckedColor}"
+                                        CornerRadius="10"
+                                        HasShadow="True"
+                                        HeightRequest="180"
+                                        WidthRequest="180">
+                                        <Grid>
+                                            <Image
+                                                Aspect="AspectFill"
+                                                Opacity=".9"
+                                                Source="{Binding ImageURL}" />
+                                            <Label
+                                                Margin="10"
+                                                FontAttributes="Bold"
+                                                FontSize="15"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="{Binding Name}"
+                                                TextColor="Black"
+                                                VerticalOptions="Start" />
+                                            <Frame
+                                                Margin="10"
+                                                Padding="5"
+                                                BackgroundColor="{StaticResource launcher_background}"
+                                                CornerRadius="5"
+                                                HasShadow="True"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="End">
+                                                <Label
+                                                    FontAttributes="Bold"
+                                                    Text="{Binding Price}"
+                                                    TextColor="Black" />
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+                                </FlexLayout>
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

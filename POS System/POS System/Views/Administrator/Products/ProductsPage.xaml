@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="POS_System.Views.Administrator.ProductsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:POS_System.ViewModels"
+    BackgroundColor="{StaticResource launcher_background}"
+    NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <StackLayout Padding="0" Orientation="Horizontal">
+            <StackLayout
+                Margin="60,10"
+                HorizontalOptions="EndAndExpand"
+                Orientation="Horizontal">
+                <Image
+                    HeightRequest="60"
+                    Source="McDonaldsLogo.png"
+                    WidthRequest="60" />
+                <Label
+                    Padding="-4"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    Text="McDonald's"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <Button
+                x:Name="btnDisplayAddProductUI"
+                Clicked="btnDisplayAddProductUI_Clicked"
+                Margin="0,0,15,5"
+                Padding="0,0,0,10"
+                BackgroundColor="{StaticResource launcher_background}"
+                Command="{Binding DisplayAddProductsUI}"
+                FontSize="30"
+                HeightRequest="40"
+                HorizontalOptions="EndAndExpand"
+                Text="+"
+                TextColor="Black"
+                VerticalOptions="Center"
+                WidthRequest="40" />
+        </StackLayout>
+
+        <ScrollView Orientation="Horizontal">
+            <StackLayout HorizontalOptions="Fill" Orientation="Horizontal">
+                <Button
+                    x:Name="btnBreakfast"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    Clicked="btnBreakfast_Clicked"
+                    Text="Breakfast"
+                    TextTransform="None" />
+                <Button
+                    x:Name="btnBurgers"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    Clicked="btnBurgers_Clicked"
+                    Text="Burgers"
+                    TextTransform="None" />
+                <Button
+                    x:Name="btnChickenPlatters"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    Clicked="btnChickenPlatters_Clicked"
+                    Text="Chicken &amp; Platters"
+                    TextTransform="None" />
+                <Button
+                    x:Name="btnDrinksDesserts"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    Clicked="btnDrinksDesserts_Clicked"
+                    Text="Drinks &amp; Desserts"
+                    TextTransform="None" />
+                <Button
+                    x:Name="btnMcCafé"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    Clicked="btnMcCafé_Clicked"
+                    Text="McCafé"
+                    TextTransform="None" />
+                <Button
+                    x:Name="btnFries"
+                    BackgroundColor="{StaticResource launcher_background}"
+                    Clicked="btnFries_Clicked"
+                    Text="Fries"
+                    TextTransform="None" />
+            </StackLayout>
+        </ScrollView>
+        <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <ContentView x:Name="contentContainer" />
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>

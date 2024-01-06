@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="POS_System.Views.Administrator.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Profile Page"
+                VerticalOptions="CenterAndExpand" />
+
+            <Button
+                x:Name="btnLogout"
+                Margin="50"
+                BackgroundColor="{StaticResource Primary}"
+                Clicked="btnLogout_Clicked"
+                Text="Logout"
+                TextColor="{StaticResource launcher_background}"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
