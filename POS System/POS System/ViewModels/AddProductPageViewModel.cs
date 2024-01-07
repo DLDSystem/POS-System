@@ -1,9 +1,11 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
+using Newtonsoft.Json;
 using POS_System.Models;
 using POS_System.Models.Products;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,28 +20,13 @@ namespace POS_System.ViewModels
 
         public async Task<bool> AddProduct(ProductsModel products)
         {
-            var data = await firebase.Child(nameof(ProductsModel)).PostAsync(products);
+            var data = await firebase.Child("ProductsModel").PostAsync(JsonConvert.SerializeObject(products));
 
             if (!string.IsNullOrEmpty(data.Key))
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
-        }
-
-        public async Task<List<ProductsModel>> GetProducts()
-        {
-            return (await firebase.Child(nameof(ProductsModel)).OnceAsync<ProductsModel>()).Select(item => new ProductsModel
-            {
-                Name = item.Object.Name,
-                Price = item.Object.Price,
-                Description = item.Object.Description,
-                ImageURL = item.Object.ImageURL,
-                Category = item.Object.Category
-            }).ToList();
+            return false;
         }
     }
 }

@@ -61,15 +61,13 @@
                     Margin="50,0"
                     ClearButtonVisibility="WhileEditing"
                     Placeholder="Description"
-                    ReturnType="Next"
-                    Text="A double layer of sear-sizzled, juicy 100% pure beef mingled with special sauce on a sesame seed bun and topped with melty American cheese, crisp lettuce, minced onions, and crisp dill pickles."/>
+                    ReturnType="Next" />
                 <Entry
                     x:Name="txtImageURL"
                     Margin="50,0"
                     ClearButtonVisibility="WhileEditing"
                     Placeholder="Image URL"
-                    ReturnType="Next"
-                    Text="https://d3bjzufjcawald.cloudfront.net/public/web/2019-03-06/5dacc151d1aabdcdbebe214d7f6dc2d1/BigMac-500.jpeg" />
+                    ReturnType="Next" />
                 <Button
                     x:Name="btnAddProduct"
                     Margin="50,10,50,0"

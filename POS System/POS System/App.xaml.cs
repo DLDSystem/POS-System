@@ -1,5 +1,4 @@
-﻿using POS_System.Services.Implementation;
-using POS_System.Views;
+﻿using POS_System.Views;
 using POS_System.Views.Administrator;
 using System;
 using Xamarin.Forms;

@@ -24,23 +24,38 @@ namespace POS_System.Views.Administrator.Products
 
         private async void btnAddProduct_Clicked(object sender, EventArgs e)
         {
-            ProductsModel productsModel = new ProductsModel();
-            productsModel.Name = txtProductName.Text;
-			productsModel.Description = txtDescription.Text;
-			productsModel.Price = double.Parse(txtPrice.Text);
-            productsModel.ImageURL = txtImageURL.Text;
-            productsModel.Category = txtCategory.Text;
-
-            var isSaved = await addProductPageViewModel.AddProduct(productsModel);
-			if (isSaved)
-			{
-				await DisplayAlert("Notification", "Product added successfully.", "Ok");
-                Clear();
-
+            if(string.IsNullOrWhiteSpace(txtProductName.Text) || string.IsNullOrWhiteSpace(txtDescription.Text) ||
+                string.IsNullOrWhiteSpace(txtPrice.Text) || string.IsNullOrWhiteSpace(txtImageURL.Text) ||
+                string.IsNullOrWhiteSpace(txtCategory.Text))
+            {
+                await DisplayAlert("Error", "Please complete the fields", "Ok");
             }
-			else
-			{
-                await DisplayAlert("Error", "Can't add a product", "Ok");
+            else if (string.IsNullOrWhiteSpace(txtProductName.Text) && string.IsNullOrWhiteSpace(txtDescription.Text) &&
+                string.IsNullOrWhiteSpace(txtPrice.Text) && string.IsNullOrWhiteSpace(txtImageURL.Text) &&
+                string.IsNullOrWhiteSpace(txtCategory.Text))
+            {
+                await DisplayAlert("Error", "No inputs detected", "Ok");
+            }
+            else
+            {
+                ProductsModel productsModel = new ProductsModel();
+                productsModel.Name = txtProductName.Text;
+                productsModel.Description = txtDescription.Text;
+                productsModel.Price = double.Parse(txtPrice.Text);
+                productsModel.ImageURL = txtImageURL.Text;
+                productsModel.Category = txtCategory.Text;
+
+                var isSaved = await addProductPageViewModel.AddProduct(productsModel);
+                if (isSaved)
+                {
+                    await DisplayAlert("Notification", "Product added successfully.", "Ok");
+                    Clear();
+
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Can't add a product", "Ok");
+                }
             }
         }
 

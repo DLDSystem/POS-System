@@ -14,16 +14,11 @@ namespace POS_System.Views.Administrator
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BreakfastPage : ContentPage
 	{
-		AddProductPageViewModel addProductPageViewModel = new AddProductPageViewModel();
+		BreakfastPageViewModel model = new BreakfastPageViewModel();
         public BreakfastPage ()
 		{
 			InitializeComponent();
-        }
-
-		protected override async void OnAppearing()
-		{
-            var products = await addProductPageViewModel.GetProducts();
-            BreakfastPageView.ItemsSource = products;
+			BreakfastPageView.ItemsSource = model.Products;
         }
 	}
 }
